@@ -1,6 +1,6 @@
 package ex_06_Ternary_Operator;
 
-public class Task {
+public class Lab069_CLI_INPUTS {
     // Ternary Operator (No if-else allowed)
     // Problem
     //
