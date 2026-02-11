@@ -1,9 +1,17 @@
 package ex_23_OOPs_Super_Abstraction.superKeyword;
 
 public class Lab180_Super {
+    public static void main(String[] args) {
+        TestCase t1 =  new TestCase();
+
+    }
 }
 
 class BaseClass {
+    private int aa;
+    private String browser;
+
+
     public String getBrowser() {
         return browser;
     }
@@ -12,20 +20,20 @@ class BaseClass {
         this.browser = browser;
     }
 
-    private String browser;
-
     BaseClass() {
         System.out.println("DC- Parent");
     }
 
+
     BaseClass(String browser){
         this.browser = browser;
-        System.out.println("DC- Parent");
+        System.out.println("PC- Parent");
     }
+
     void openBrowser(String browserName) {
         System.out.println("Open Browser!! -> " + browserName);
     }
-  private int aa;
+
     void closeBrowser() {
         System.out.println("Close Browser!!");
     }
@@ -38,19 +46,8 @@ class TestCase extends BaseClass{
 
     TestCase()
     {
-        //super();
-//        super("Chrome");
-        super.openBrowser("Chrome");
-        super.closeBrowser();
-        System.out.println(super.getBrowser());
-        super.setBrowser("firefox");
-        //System.out.println(super.aa);
-        this.test();//
-        System.out.println(this.a);
-
-
-
-
+        super("chrome");
+        System.out.println("DC-Child");
     }
 
 
