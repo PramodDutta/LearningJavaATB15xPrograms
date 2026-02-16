@@ -5,44 +5,39 @@ import java.util.*;
 public class LabComparator {
 
     public static void main(String[] args) {
-        List<Employee> markslist = new ArrayList<>();
-        markslist.add(new Employee(3, "Pramod", 100));
-        markslist.add(new Employee(1, "Alice", 134));
-        markslist.add(new Employee(2, "Bob", 234));
 
-//        List<Integer> marks = new ArrayList<>();
-//        marks.add(100);
-//        marks.add(90);
-//        marks.add(92);
-//        Collections.sort(marks);
-//        System.out.println(marks);
+        List<Employee2> list = new ArrayList<>();
+        list.add(new Employee2(3, "John", 100));
+        list.add(new Employee2(1, "Alice", 134));
+        list.add(new Employee2(2, "Bob", 234));
 
-        System.out.println(markslist);
-        System.out.println(" ----- ");
-        Comparator<Employee> idComparator = (e1, e2) -> e1.id - e2.id;
-        Collections.sort(markslist,idComparator);
-        System.out.println(markslist);
+        Comparator<Employee2> idComparator = (e1, e2) -> e1.id - e2.id;
+        Comparator<Employee2> salaryComparator = (e1, e2) -> e1.salary - e2.salary;
+        Comparator<Employee2> nameComparator = (e1, e2) -> e1.name.compareTo(e2.name);
+
+
+        Collections.sort(list, salaryComparator);
+        System.out.println(list);
+
 
     }
-
 
 }
 
-class Employee {
+class Employee2 {
     Integer id;
-
-    public Employee(Integer id, String name, Integer salary) {
-        this.name = name;
-        this.salary = salary;
-        this.id = id;
-    }
-
     String name;
     Integer salary;
 
+    public Employee2(Integer id, String name, Integer salary) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+
     @Override
     public String toString() {
-        return "Employee{" +
+        return "Employee2{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", salary=" + salary +
